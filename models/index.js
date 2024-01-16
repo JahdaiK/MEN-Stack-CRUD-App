@@ -12,8 +12,9 @@ db.on('connected', function () {
     console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`);
 });
 
-//Export models and seed data
+//Export Book models and seed data
 module.exports={
-    Book: require('./book')
+    Book: require('./book'),
+    seedBooks: require('./seed')
 }
 

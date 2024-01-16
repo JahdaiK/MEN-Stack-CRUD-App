@@ -80,3 +80,6 @@ const books =[
     bomYear:  '2023'
 },
 ]
+
+// Export the seed data to `models/index.js`
+module.exports = books

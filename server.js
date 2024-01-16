@@ -42,9 +42,26 @@ app.use(connectLiveReload());
 
 /* Mount routes
 --------------------------------------------------------------- */
+//Home page
 app.get('/', function (req, res) {
     res.send('Project_Two')
 });
+
+//When a Get request is sent to `/seed, the Books collection is seeded
+app.get('/seed', function(req, res){
+    //remove any existing books
+    db.Book.deleteMany({})
+    .then(removedBooks=>{
+        console.log(`Removed ${removedBooks.deletedCount} books`)
+        //seed the book collection with the seed data
+        db.Book.insertMany(db.seedBooks)
+        .then(addedBooks=>{
+            console.log(`Added ${addedBooks.length} books to the database`)
+            res.json(addedBooks)
+        })
+    })
+});
+
 
 
 /* Tell the app to listen on the specified port
