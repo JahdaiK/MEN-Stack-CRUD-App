@@ -6,6 +6,10 @@ const express = require('express');
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 
+/* Require the routes in the controllers folder
+--------------------------------------------------------------- */
+const booksCtrl =require('./controllers/books')
+
 
 /* Require the db connection, models, and seed data
 --------------------------------------------------------------- */
@@ -62,6 +66,8 @@ app.get('/seed', function(req, res){
     })
 });
 
+// This tells our app to look at the `controllers/books.js` file to handle all routes that begin with `localhost:3000/books`
+app.use('/books', booksCtrl)
 
 
 /* Tell the app to listen on the specified port
