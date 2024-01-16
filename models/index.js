@@ -1,4 +1,4 @@
-//Use this file to connect to the database
+/*Purpose: Use this file to connect to the database*/
 
 // Require the Mongoose package & your environment configuration
 const mongoose = require('mongoose');
@@ -12,4 +12,8 @@ db.on('connected', function () {
     console.log(`Connected to MongoDB ${db.name} at ${db.host}:${db.port}`);
 });
 
+//Export models and seed data
+module.exports={
+    Book: require('./book')
+}
 

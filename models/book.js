@@ -1,4 +1,4 @@
-//This file creates the Book model/schema
+/* Purpose: This file creates the Book model/schema*/
 
 //Require the Mongoos package
 const mongoose = require("mongoose");

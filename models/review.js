@@ -1,3 +1,4 @@
+/* Purpose: This file creates the Review model/schema*/
 const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema({
