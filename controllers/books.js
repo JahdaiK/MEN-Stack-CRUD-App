@@ -17,7 +17,7 @@ const db = require("../models");
 --------------------------------------------------------------- */
 // Index Route (GET/Read): Will display all books
 router.get("/", function (req, res) {
-  db.Book.find({}).then((books) => res.json(books));
+  db.Book.find({}).then((books) => res.render('book-index',{book: books}));
 });
 
 //New Route(GET): Will display a form to add a new book

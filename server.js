@@ -7,15 +7,16 @@ const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 const methodOverride = require('method-override');
 
+/* Require the db connection, models, and seed data
+--------------------------------------------------------------- */
+const db = require('./models');
 
 /* Require the routes in the controllers folder
 --------------------------------------------------------------- */
 const booksCtrl =require('./controllers/books')
+const reviewsCtrl = require('./controllers/reviews');
 
 
-/* Require the db connection, models, and seed data
---------------------------------------------------------------- */
-const db = require('./models');
 
 
 /* Create the Express app
@@ -56,8 +57,17 @@ app.use(methodOverride("_method"));
 /* Mount routes
 --------------------------------------------------------------- */
 //Home page
-app.get('/', function (req, res) {
-    res.send('Project_Two')
+
+app.get('/', async function (req, res) {
+    const featuredBooks = await db.Book.find({ isFeatured: true });
+    const bookOfTheMonth = await db.Book.findOne({ isBookOfTheMonth: true });
+
+    res.render('home', { featuredBooks: featuredBooks, bookOfTheMonth: bookOfTheMonth });
+});
+
+// About page
+app.get('/about', function (req, res) {
+    res.render('about')
 });
 
 //When a Get request is sent to `/seed, the Books collection is seeded
@@ -78,6 +88,14 @@ app.get('/seed', function(req, res){
 // This tells our app to look at the `controllers/books.js` file to handle all routes that begin with `localhost:3000/books`
 app.use('/books', booksCtrl)
 
+// This tells our app to look at the `controllers/reviews.js` file
+// to handle all routes that begin with `localhost:3000/reviews`
+app.use("/reviews",reviewsCtrl);
+
+/*The "catch-all" route: Runs for any other URL that doesn't match the above routes*/
+app.get("*", function (req, res) {
+    res.render("404");
+  });
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
