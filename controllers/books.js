@@ -22,6 +22,13 @@ router.get('/', function(req, res){
     .then(books=>res.json(books))
 });
 
+//New Route(GET): Will display a form to add a new book
+
+router.get('/new', function (req,res){
+    console.log('go to form')
+    res.render('newbook-form')
+});
+
 //Show Route(GET/Read): Will display an individual book document using the url parameter(document _id), catch 404
 
 router.get('/:id', function(req,res){
@@ -31,17 +38,11 @@ router.get('/:id', function(req,res){
     .catch(()=>res.send('404 book not found'))
 });
 
-//New Route(GET): Will display a form to add a new book
-
-router.get('/new', function (req,res){
-    console.log('go to form')
-    res.render('newbook-form')
-});
-
 //Create Route(POST/Create): Will create a new book, redirects to the new book's details page
 router.post('/',function (req,res){
+    console.log(req.body)
     db.Book.create(req.body)
-    .then((book)=>res.redirect('/books/'+book._id))
+    .then((book)=>res.redirect('/books/'+ book._id))
     .catch((err)=>console.log(err))
 });
 
