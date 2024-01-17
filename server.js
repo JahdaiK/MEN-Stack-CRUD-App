@@ -60,9 +60,9 @@ app.use(methodOverride("_method"));
 
 app.get('/', async function (req, res) {
     const featuredBooks = await db.Book.find({ isFeatured: true });
-    const bookOfTheMonth = await db.Book.findOne({ isBookOfTheMonth: true });
+    const bookOfMonth = await db.Book.findOne({ isBookOfMonth: true });
 
-    res.render('home', { featuredBooks: featuredBooks, bookOfTheMonth: bookOfTheMonth });
+    res.render('home', { featuredBooks: featuredBooks, bookOfMonth: bookOfMonth });
 });
 
 // About page
