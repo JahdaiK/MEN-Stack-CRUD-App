@@ -1,6 +1,7 @@
 /* 
 ---------------------------------------------------------------------------------------
-NOTE: Remember that all routes on this page are prefixed with `localhost:3000/books`
+NOTE: Remember that all routes on this page are prefixed with `localhost:3000/
+`
 ---------------------------------------------------------------------------------------
 */
 
@@ -33,8 +34,8 @@ router.get("/new", function (req, res) {
 router.get("/:id", function (req, res) {
   console.log("going to show");
   db.Book.findById(req.params.id)
-    .then((book) => res.json(book))
-    .catch(() => res.send("404 book not found"));
+    .then((book) => res.render("book-details", { book: book }))
+    .catch(() => res.render('404'));
 });
 
 //Create Route(POST/Create): Will create a new book, redirects to the new book's details page

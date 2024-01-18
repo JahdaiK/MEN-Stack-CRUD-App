@@ -12,12 +12,12 @@ const reviewSchema = new mongoose.Schema({
     type: String,
   },
 
-  review: {
+  content: {
     type: String,
     required: true,
   },
 
-  name: {
+  reviewerName: {
     type: String,
     required: true,
   },

@@ -1,16 +1,41 @@
 <!-- The view for the show route. Will display all details for a specific book. -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <p>Test Book Details</p>
-     <!-- Nav Bar -->
-  <!--Left: Book image -->
-  <!--right: Title, author, description -->
-  <!--bottom: Reviews: Add new review button, displays list of reviews for the specific book, review title, content, reviewer name, rating -->
-  <!--Footer-->
-</body>
+  </head>
+  <body>
+    <nav><%- include('./partials/nav.ejs') %></nav>
+    <section class="book-details">
+      <div class="book-image">
+        <img src="<%=book.photo%>" />
+      </div>
+      <div class="about-book">
+        <h3><%=book.title%></h3>
+        <h5><%=book.author%></h5>
+        <p><%=book.synopsis%></p>
+      </div>
+    </section>
+
+    <Section class="reviews-section">
+      <div class="review-heading">
+        <h4>Reviews</h4>
+        <button class="btn review-btn">
+          <a href="/reviews/new/<%= book._id %>">Write A Review</a>
+        </button>
+      </div>
+      <div class="book-review">
+        <% if (book.reviews && book.reviews.length > 0) { %> <% for (let review
+        of book.reviews) { %>
+        <h6><%= review.title %></h6>
+        <p><%= review.reviewerName %></p>
+        <p><%= review.content %></p>
+        <% } %> <% } else { %>
+        <p>Write the first review!</p>
+        <% } %>
+      </div>
+    </Section>
+    <footer><%- include('./partials/footer.ejs') %></footer>
+  </body>
 </html>
