@@ -9,22 +9,35 @@
   <!-- Nav Bar -->
     <%- include('./partials/nav.ejs') %>
   <!--Hero: Book of Month [image, title, Month, quick synopsis learn more button]-->
-  <section class='hero'>
-
+  <div class='hero'>
 <h1><%=bookOfMonth.title%></h1>
 <img src="<%=bookOfMonth.photo%>">
 <p><%=bookOfMonth.bomReason%></p>
+
 <button><a href="/books/<%=bookOfMonth._id%>">Read On</a></button>
-  </section>
+  </div>
 
   <!--3 featured books from the past 3 months [clickable image, title, month, thoughts on book, ]-->
-<section class ='Featured'>
+<!-- <section class ='Featured'> -->
+  <section class="featured-books">
+    <h2>Featured Books</h2>
+    <ul class="featured-grid">
 <% for(let featuredBook of featuredBooks){%>
-
-<%}%>
-
+<li>
+  <figure>
+<img src="<%=featuredBook.photo%>">
+</figure>
+<figcaption>
+  <div class ='featured-info'></div>
+  <h3>featuredBook.title</h3>
+  <h4><%=featuredBook.bomMonth%></h4>
+  <h4><%=featuredBook.bomYear%></h4>
+</div>
+</figcaption>
+</li>
+<% } %>
+</ul>
 </section>
-
   <!--Footer-->
 </body>
 </html>
