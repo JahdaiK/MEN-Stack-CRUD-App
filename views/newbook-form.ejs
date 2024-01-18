@@ -1,15 +1,87 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <p>add new book form test
-        <!--Nav-->
-         <!--form includes:
-         -->
-         <!--Footer-->
-    </p>
-</body>
+  </head>
+  <body>
+    <nav><%- include('./partials/nav.ejs') %></nav>
+    
+
+    <section>
+      <form method="POST" action="/books">
+        
+        <div class="input-box">
+          <label for="title">Title:</label>
+          <input type="text" placeholder="Book Title" id="title" name="title" required />
+        </div>
+        <br />
+
+        <div class="input-box">
+          <label for="author">Author:</label>
+          <input type="text" placeholder="Book Author" id="author" name="author" required />
+        </div>
+
+        <br />
+
+        <div class="input-box">
+          <label for="genre">Genre:</label>
+          <input type="text" placeholder="Genre" id="genre" name="genre" required />
+        </div>
+
+        <br />
+
+        <div class="input-box">
+          <label for="synopsis">Synopsis:</label>
+          <textarea
+            type="text"
+            placeholder="Detailed Book Description"
+            id="synopsis"
+            name="synopsis"
+            required
+          ></textarea>
+        </div>
+        <br />
+
+        <div class="input-box">
+          <label for="photo">Cover Photo:</label>
+          <input type="text" placeholder="Photo URL" id="photo" name="photo" required />
+        </div>
+        <br />
+
+        <div class="checkbox">
+          <label for="isBookOfMonth">Book of the Month?</label>
+          <input type="checkbox" name="bookOfMonth" />
+        </div>
+        <br />
+
+        <div class="input-box">
+          <label for="bomMonth">Month:</label>
+          <input type="text" placeholder="Month Highlighted"id="month" name="month" required />
+        </div>
+        <br />
+
+        <div class="input-box">
+          <label for="bomYear">Year:</label>
+          <input type="text" placeholder="Year Highlighted" id="year" name="year" required />
+        </div>
+        <br />
+
+        <div class="input-box">
+          <label for="bomReason">Reason:</label>
+          <textarea type="text" placeholder="Why is this the Book Of The Month?" id="reason" name="reason"></textarea>
+        </div>
+        <br />
+
+        <div class="checkbox">
+          <label for="isFeatured">Featured Book?</label>
+          <input type="checkbox" name="featuredBooks" />
+        </div>
+        <br />
+        <input type="submit" value="Add Book" />
+      </form>
+     
+    </section>
+    <footer><%- include('./partials/footer.ejs') %></footer>
+  </body>
 </html>
