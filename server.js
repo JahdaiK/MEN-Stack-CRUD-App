@@ -43,8 +43,23 @@ app.set('views', path.join(__dirname, 'views'));
 
 /* Middleware (app.use)
 --------------------------------------------------------------- */
+ // Detect if running in a dev environment
+if (process.env.ON_HEROKU === 'false') {
+    // Configure the app to refresh the browser when nodemon restarts
+    const liveReloadServer = livereload.createServer();
+    liveReloadServer.server.once("connection", () => {
+        // wait for nodemon to fully restart before refreshing the page
+        setTimeout(() => {
+        liveReloadServer.refresh("/");
+        }, 100);
+    });
+    app.use(connectLiveReload());
+}
+
+
+
 app.use(express.static('public'))
-app.use(connectLiveReload());
+
 
 //Postman
 // Body parser: used for POST/PUT/PATCH routes:
@@ -70,6 +85,7 @@ app.get('/about', function (req, res) {
     res.render('about')
 });
 
+if(process.env.ON_HEROKU==='false'){
 //When a Get request is sent to `/seed, the Books collection is seeded
 app.get('/seed', function(req, res){
     //remove any existing books
@@ -84,7 +100,7 @@ app.get('/seed', function(req, res){
         })
     })
 });
-
+}
 // This tells our app to look at the `controllers/books.js` file to handle all routes that begin with `localhost:3000/books`
 app.use('/books', booksCtrl)
 
