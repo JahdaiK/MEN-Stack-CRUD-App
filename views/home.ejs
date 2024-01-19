@@ -1,43 +1,49 @@
 <!-- The landing page of the application, will display featured books. -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-  <!-- Nav Bar -->
-    <%- include('./partials/nav.ejs') %>
-  <!--Hero: Book of Month [image, title, Month, quick synopsis learn more button]-->
-  <div class='hero'>
-<h1><%=bookOfMonth.title%></h1>
-<img src="<%=bookOfMonth.photo%>">
-<p><%=bookOfMonth.bomReason%></p>
+    <link rel="stylesheet" href="/styles/home.css" />
+  </head>
+  <body>
+    <!-- Nav Bar -->
+  <nav ><%- include('./partials/nav.ejs') %></nav>
+    <div class="homepage-grid">
+  <section class="bom-container">
+    <div class="bom-content">
+        <h1><%=bookOfMonth.title%></h1>
+        <img src="<%=bookOfMonth.photo%>" />
+        <p><%=bookOfMonth.bomReason%></p>
+        <button><a href="/books/<%=bookOfMonth._id%>">Read On</a></button>
+      </div>
+  </section>
 
-<button><a href="/books/<%=bookOfMonth._id%>">Read On</a></button>
-  </div>
-
-  <!--3 featured books from the past 3 months [clickable image, title, month, thoughts on book, ]-->
-<!-- <section class ='Featured'> -->
-  <section class="featured-books">
-    <h2>Featured Books</h2>
-    <ul class="featured-grid">
-<% for(let featuredBook of featuredBooks){%>
-<li>
-  <figure>
-<img src="<%=featuredBook.photo%>">
-</figure>
-<figcaption>
-  <div class ='featured-info'></div>
-  <h3>featuredBook.title</h3>
-  <h4><%=featuredBook.bomMonth%> <%=featuredBook.bomYear%>%></h4>
-
-</div>
-</figcaption>
-</li>
-<% } %>
-</ul>
-</section>
-<footer><%- include('./partials/footer.ejs') %></footer>
-</body>
+      <!--3 featured books from the past 3 months [clickable image, title, month, thoughts on book, ]-->
+      <!-- <section class ='Featured'> -->
+      <section class="fb-container">
+        <div class="fb-content">
+        <h2>Featured Books</h2>
+        <ul class="featured-grid">
+          <% for(let featuredBook of featuredBooks){%>
+          <li>
+            <figure>
+              <img src="<%=featuredBook.photo%>" />
+            </figure>
+            <figcaption>
+              <div class="featured-info">
+                <h3>featuredBook.title</h3>
+                <h4><%=featuredBook.bomMonth%> <%=featuredBook.bomYear%>%></h4>
+              </div>
+            </figcaption>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      </section>
+    </div>
+    <footer>
+      <%- include('./partials/footer.ejs') %>
+      </footer>
+  </body>
 </html>
