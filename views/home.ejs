@@ -8,42 +8,46 @@
   </head>
   <body>
     <!-- Nav Bar -->
-  <nav ><%- include('./partials/nav.ejs') %></nav>
+    <nav><%- include('./partials/nav.ejs') %></nav>
     <div class="homepage-grid">
-  <section class="bom-container">
-    <div class="bom-content">
-        <h1><%=bookOfMonth.title%></h1>
-        <img src="<%=bookOfMonth.photo%>" />
-        <p><%=bookOfMonth.bomReason%></p>
-        <button><a href="/books/<%=bookOfMonth._id%>">Read On</a></button>
-      </div>
-  </section>
+      <section class="bom-container">
+        <div class="bom-content">
+          <h1><%=bookOfMonth.title%></h1>
+          <a href="/books/<%=bookOfMonth._id%>"
+            ><img src="<%=bookOfMonth.photo%>"
+          /></a>
+          <p><%=bookOfMonth.bomReason%></p>
+          <button><a href="/books/<%=bookOfMonth._id%>">Read On</a></button>
+        </div>
+      </section>
 
       <!--3 featured books from the past 3 months [clickable image, title, month, thoughts on book, ]-->
       <!-- <section class ='Featured'> -->
       <section class="fb-container">
         <div class="fb-content">
-        <h2>Featured Books</h2>
-        <ul class="featured-grid">
-          <% for(let featuredBook of featuredBooks){%>
-          <li>
-            <figure>
-              <img src="<%=featuredBook.photo%>" />
-            </figure>
-            <figcaption>
-              <div class="featured-info">
-                <h3>featuredBook.title</h3>
-                <h4><%=featuredBook.bomMonth%> <%=featuredBook.bomYear%>%></h4>
-              </div>
-            </figcaption>
-          </li>
-          <% } %>
-        </ul>
-      </div>
+          <h2>Featured Books</h2>
+          <ul class="featured-grid">
+            <% for(let featuredBook of featuredBooks){%>
+            <li>
+              <figure>
+                <a href="/books/<%=featuredBook._id%>"
+                  ><img src="<%=featuredBook.photo%>"
+                /></a>
+              </figure>
+              <figcaption>
+                <div class="featured-info">
+                  <h3>featuredBook.title</h3>
+                  <h4>
+                    <%=featuredBook.bomMonth%> <%=featuredBook.bomYear%>%>
+                  </h4>
+                </div>
+              </figcaption>
+            </li>
+            <% } %>
+          </ul>
+        </div>
       </section>
     </div>
-    <footer>
-      <%- include('./partials/footer.ejs') %>
-      </footer>
+    <footer><%- include('./partials/footer.ejs') %></footer>
   </body>
 </html>

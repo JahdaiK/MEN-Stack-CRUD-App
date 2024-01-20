@@ -1,18 +1,41 @@
 <!-- The view for the index route. Will display ALL BOOKS -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-  <nav><%- include('./partials/nav.ejs') %></nav>
-    <p>test all books</p>
-      <!-- Nav Bar -->
-  <!--Heres What we Read So far -->
-  <!--Gallery of book covers, month and date. clicking on cover brings to details page-->
-  
-  <!--Edit, delete button-->
-  <footer><%- include('./partials/footer.ejs') %></footer>
-</body>
+  </head>
+  <body>
+    <nav><%- include('./partials/nav.ejs') %></nav>
+    <div class="hero">
+      <p>Here's What We've Read So Far...</p>
+    </div>
+
+    <div class="library">
+      <ul>
+        <% for (let book of books){ %>
+        <li>
+          <figure>
+            <a href="/books/<%=book._id%>"> <img src="<%=book.photo%>" /></a>
+
+            <figcaption>
+              <p>
+                <span><%=book.title%></span> <%=book.bomMonth%>
+                <%=book.bomYear%>
+              </p>
+
+              <h6></h6>
+            </figcaption>
+          </figure>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+    <!-- Nav Bar -->
+    <!--Heres What we Read So far -->
+    <!--Gallery of book covers, month and date. clicking on cover brings to details page-->
+
+    <!--Edit, delete button-->
+    <footer><%- include('./partials/footer.ejs') %></footer>
+  </body>
 </html>
