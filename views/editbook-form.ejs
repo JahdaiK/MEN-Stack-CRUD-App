@@ -7,14 +7,14 @@
   <body>
     <nav><%- include('./partials/nav.ejs') %></nav>
     <section>
-      <form method="POST" action="/books">
+      <form method="POST" action="/books/<%=book._id%>?_method=PUT">
         <div class="input-box">
           <label for="title">Title:</label>
           <input
             type="text"
-            placeholder="Book Title"
             id="title"
             name="title"
+            value="<%= book.title %>"
             required
           />
         </div>
@@ -24,9 +24,9 @@
           <label for="author">Author:</label>
           <input
             type="text"
-            placeholder="Book Author"
             id="author"
             name="author"
+            value="<%= book.author %>"
             required
           />
         </div>
@@ -37,24 +37,20 @@
           <label for="genre">Genre:</label>
           <input
             type="text"
-            placeholder="Genre"
             id="genre"
             name="genre"
+            value="<%= book.genre %>"
             required
           />
         </div>
 
         <br />
 
-        <div class="input-box">
+        <div class="text-area">
           <label for="synopsis">Synopsis:</label>
-          <textarea
-            type="text"
-            placeholder="Detailed Book Description"
-            id="synopsis"
-            name="synopsis"
-            required
-          ></textarea>
+          <textarea type="text" id="synopsis" name="synopsis" required>
+<%=book.synopsis%></textarea
+          >
         </div>
         <br />
 
@@ -62,9 +58,9 @@
           <label for="photo">Cover Photo:</label>
           <input
             type="text"
-            placeholder="Photo URL"
             id="photo"
             name="photo"
+            value="<%= book.photo %>"
             required
           />
         </div>
@@ -72,7 +68,11 @@
 
         <div class="checkbox">
           <label for="isBookOfMonth">Book of the Month?</label>
-          <input type="checkbox" name="bookOfMonth" />
+          <input
+            type="checkbox"
+            name="bookOfMonth"
+            value="<%=book.isBookOfMonth%>"
+          />
         </div>
         <br />
 
@@ -83,6 +83,7 @@
             placeholder="Month Highlighted"
             id="month"
             name="month"
+            value="<%= book.bomMonth %>"
             required
           />
         </div>
@@ -95,6 +96,7 @@
             placeholder="Year Highlighted"
             id="year"
             name="year"
+            value="<%= book.bomYear %>"
             required
           />
         </div>
@@ -103,17 +105,21 @@
         <div class="input-box">
           <label for="bomReason">Reason:</label>
           <textarea
-            type="text"
-            placeholder="Why is this the Book Of The Month?"
-            id="reason"
-            name="reason"
-          ></textarea>
+          type="text"
+          placeholder="Why is this the Book Of The Month?"
+          id="reason"
+          name="reason"
+        ><%= book.bomReason %></textarea>
         </div>
         <br />
 
         <div class="checkbox">
           <label for="isFeatured">Featured Book?</label>
-          <input type="checkbox" name="featuredBooks" />
+          <input
+            type="checkbox"
+            name="featuredBooks"
+            value="<%=book.isBookOfMonth%>"
+          />
         </div>
         <br />
         <input type="submit" value="Add Book" />

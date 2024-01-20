@@ -9,8 +9,8 @@
   <body>
     <!-- Nav Bar -->
     <nav><%- include('./partials/nav.ejs') %></nav>
-    <div class="homepage-grid">
-      <section class="bom-container">
+    <section class="homepage-grid">
+      <div class="bom-container">
         <div class="bom-content">
           <h1><%=bookOfMonth.title%></h1>
           <a href="/books/<%=bookOfMonth._id%>"
@@ -19,11 +19,11 @@
           <p><%=bookOfMonth.bomReason%></p>
           <button><a href="/books/<%=bookOfMonth._id%>">Read On</a></button>
         </div>
-      </section>
+      </div>
 
       <!--3 featured books from the past 3 months [clickable image, title, month, thoughts on book, ]-->
       <!-- <section class ='Featured'> -->
-      <section class="fb-container">
+      <div class="fb-container">
         <div class="fb-content">
           <h2>Featured Books</h2>
           <ul class="featured-grid">
@@ -46,8 +46,8 @@
             <% } %>
           </ul>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
     <footer><%- include('./partials/footer.ejs') %></footer>
   </body>
 </html>
