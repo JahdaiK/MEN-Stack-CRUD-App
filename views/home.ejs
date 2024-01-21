@@ -7,47 +7,29 @@
     <link rel="stylesheet" href="/styles/home.css" />
   </head>
   <body>
-    <!-- Nav Bar -->
-    <nav><%- include('./partials/nav.ejs') %></nav>
-    <section class="homepage-grid">
-      <div class="bom-container">
-        <div class="bom-content">
-          <h1><%=bookOfMonth.title%></h1>
-          <a href="/books/<%=bookOfMonth._id%>"
-            ><img src="<%=bookOfMonth.photo%>"
-          /></a>
-          <p><%=bookOfMonth.bomReason%></p>
-          <button><a href="/books/<%=bookOfMonth._id%>">Read On</a></button>
-        </div>
-      </div>
+    
 
-      <!--3 featured books from the past 3 months [clickable image, title, month, thoughts on book, ]-->
-      <!-- <section class ='Featured'> -->
-      <div class="fb-container">
-        <div class="fb-content">
-          <h2>Featured Books</h2>
-          <ul class="featured-grid">
-            <% for(let featuredBook of featuredBooks){%>
-            <li>
-              <figure>
-                <a href="/books/<%=featuredBook._id%>"
-                  ><img src="<%=featuredBook.photo%>"
-                /></a>
-              </figure>
-              <figcaption>
-                <div class="featured-info">
-                  <h3>featuredBook.title</h3>
-                  <h4>
-                    <%=featuredBook.bomMonth%> <%=featuredBook.bomYear%>%>
-                  </h4>
-                </div>
-              </figcaption>
-            </li>
-            <% } %>
-          </ul>
+    <div class="container">
+      <nav>navbar</nav>
+      <!-- book of month -->
+      <div id="bookofmonth">
+        <div id="bookcover">bookcover</div>
+        <div id="info">
+          <h3>date</h3>
+          <p>synopsis</p>
         </div>
       </div>
-    </section>
-    <footer><%- include('./partials/footer.ejs') %></footer>
+      <!-- featured books -->
+      <div id="spotlight"> 
+        <h3>Featured Books</h3>
+       <ul>
+        <li>book1</li>
+        <li>book2</li>
+        <li>book3</li>
+       </ul>
+
+      </div>
+      <footer>footer</footer>
+    </div>  
   </body>
 </html>

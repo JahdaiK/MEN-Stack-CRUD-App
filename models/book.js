@@ -13,7 +13,6 @@ const bookSchema = new mongoose.Schema({
   photo: { type: String, required: true },
   synopsis: { type: String, required: true },
   isBookOfMonth: { type: Boolean, default: false },
-  bomReason:{type: String},
   isFeatured: { type: Boolean, default: false },
   bomMonth: { type: String },
   bomYear: { type: String, minlength: 4, maxlength: 4 },
@@ -22,4 +21,4 @@ const bookSchema = new mongoose.Schema({
 });
 
 //Export schema as a mongoose model
-module.exports=mongoose.model('Book', bookSchema)
+module.exports=mongoose.model('Book', bookSchema);

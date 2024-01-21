@@ -1,46 +1,51 @@
-ul {
-    list-style: none;
-  }
-  
-  ul li {
-    display: inline-block;
-  }
-
-  section{
-    border: 1px solid purple;
-  }
-
-
-.homepage-grid{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    row-gap: 10px;
+body{
+  margin: 0;
 }
-  .bom-container{
-    grid-column: 2/6;
-    grid-row: 1/4;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-  }
-  .bom-content{
-   grid-column: 3/5;
+.container{
+  display: grid;
+  height: 100vh;
+  grid-template-rows: .20fr 50% .75fr .10fr;
+  row-gap: .3rem;
+  
+}
 
-  }
+nav{
+  background-color: lightcoral;
+}
 
-  .fb-container{
-    grid-column: 2/6;
-    grid-row: 5;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-  }
+#bookofmonth{
+  background-color: lightgreen;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'bookcover info'
+ 
+}
+#bookcover{
+  grid-area: bookcover;
+}
+#info{
+  grid-area: info;
+}
+#spotlight{
+  background-color: lightskyblue;
+}
 
-  .fb-content h2{
-   text-align: center;
-  }
-  .fb-content h3{
-    text-align: center;
-   }
+#spotlight > h3{
+  text-align: center;
+}
+ul{
+  list-style: none;
+}
+li{
+display: inline-block;
+}
 
-   .fb-content h4{
-    text-align: center;
-   }
+footer{
+    background-color: lightslategray;
+}
+
+
+
+
+
+  

@@ -37,7 +37,7 @@
       <div class="book-review">
         <% if (book.reviews && book.reviews.length > 0) { %> <% for (let review
         of book.reviews) { %>
-        <h6><%= review.title %></h6>
+        <h6><%= review.reviewTitle %> <%= review.rating %>/10</h6>
         <p><%= review.reviewerName %></p>
         <p><%= review.content %></p>
         <% } %> <% } else { %>

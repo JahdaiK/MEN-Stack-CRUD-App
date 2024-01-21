@@ -68,7 +68,7 @@ router.delete('/:id', (req, res)=>{
         { $pull: { books: { _id: req.params.id } } },
         { new: true }
     )
-    .then(book => res.redirect('/books/'+book._id))
+    .then((book) => res.redirect('/books/'+book._id));
 });
 
 /* Export these routes so that they are accessible in `server.js`
