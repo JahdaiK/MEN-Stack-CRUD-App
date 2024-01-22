@@ -14,13 +14,14 @@ body {
  }
  
  .book-details {
-  background-color: rgb(186, 152, 218);
+  background-color: rgb(243, 234, 252);
   display: grid;
   grid-template-columns: 1fr;
  }
  
  .image-wrapper{
      height: auto;
+     justify-self: center;
  }
  
  .image-wrapper img {
