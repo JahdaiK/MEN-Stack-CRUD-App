@@ -5,7 +5,8 @@ body {
 .container {
   display: grid;
   height: 100vh;
-  grid-template-rows: 5% 1fr 1fr 1fr 1fr;
+  grid-template-rows: 5% 55% 5% 1fr 5%;
+  /* row-gap: .3rem; */
 }
 
 nav {
@@ -13,7 +14,30 @@ nav {
 }
 .book-details {
   background-color: aqua;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
+
+.image-wrapper{
+    height: 100%;
+    justify-self: center;
+}
+
+.image-wrapper img {
+    object-fit: cover;
+    height: 65%;
+    width: auto;
+   }
+   .about-book{
+    width: 50%;
+   }
+/* .book-details > img{
+/* height: 300px;
+width: auto;
+object-fit: contain;
+height: 70%;
+width: auto; */
+
 
 
 .book-actions {

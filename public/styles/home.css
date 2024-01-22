@@ -11,11 +11,12 @@ body {
   55% 
   1fr 
 5%;
-  row-gap: .3rem;
+  /* row-gap: .3rem; */
 }
 
 nav {
   background-color: lightcoral;
+  margin-bottom: 3px;
 }
 img{
   height: 300px;
@@ -29,20 +30,26 @@ img{
   grid-template-areas: "bookcover info";
 }
 #bookcover {
+  height: 100%;
   grid-area: bookcover;
   justify-self: center;
+  width: 50%;
 }
-#bookcover > img {
-  height: 425px;
-  margin-top: .5rem;
+#bookcover img {
+  height: 80%;
+  margin-top: 2.5%;
+  
 width: auto;
-  object-fit: contain;
-  display: block;
+ object-fit: contain;
+
 
 }
 
 #info {
   grid-area: info;
+  text-wrap: wrap;
+  width: 50%;
+  /* align-self:center; */
 }
 
 #spotlight {
