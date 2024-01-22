@@ -45,12 +45,9 @@ body {
  
  .review-heading {
   display: flex;
-  border-bottom: 1px green solid;
+
  }
- 
- .review{
-  border: 1px red solid;
- }
+
  
  @media screen and (min-width: 601px) {
   .container {
