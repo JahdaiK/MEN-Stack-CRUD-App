@@ -16,17 +16,18 @@
           <h3><%=book.title%></h3>
           <h5><%=book.author%></h5>
           <p><%=book.synopsis%></p>
+          
+            <button class="edit-btn btn">
+              <a href="/books/<%= book._id %>/edit">Edit</a>
+            </button>
+            <form method="POST" action="/books/<%= book._id %>?_method=DELETE">
+              <input class="btn delete-btn" type="submit" value="Delete" />
+            </form>
+
         </div>
       </div>
 
-      <div class="book-actions">
-        <button class="edit-btn btn">
-          <a href="/books/<%= book._id %>/edit">Edit</a>
-        </button>
-        <form method="POST" action="/books/<%= book._id %>?_method=DELETE">
-          <input class="btn delete-btn" type="submit" value="Delete" />
-        </form>
-      </div>
+     
 
       <div class="reviews-section">
         <div class="review-heading">

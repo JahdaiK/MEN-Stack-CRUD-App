@@ -6,17 +6,17 @@ body {
   display: grid;
   height: 100vh;
   grid-template-rows: 
-   10%
-   60% 
-   30% 
-   10%;
-  row-gap: .3rem;
+   2rem
+   2fr
+   1fr
+   2rem
+   
  }
  
  .book-details {
   background-color: rgb(243, 234, 252);
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
  }
  
  .image-wrapper{
@@ -31,13 +31,10 @@ body {
  }
  
  .about-book{
+   height: auto;
      width: 100%;
  }
  
- .book-actions {
-  display: flex;
-  justify-content:flex-end;
- }
  
  .btn{
  margin: 5px;
@@ -54,8 +51,7 @@ body {
      grid-template-rows: 
      5% 
      70% 
-     5% 
-      auto 
+     1fr 
      5%;
   }
  
