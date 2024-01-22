@@ -4,47 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/book-details.css" />
   </head>
   <body>
+    <div class="container">
     <nav><%- include('./partials/nav.ejs') %></nav>
-    <section class="book-details">
-      <div class="book-image">
-        <img src="<%=book.photo%>" />
+      <div class="book-details">
+          <img src="<%=book.photo%>" />
+        <div class="about-book">
+          <h3><%=book.title%></h3>
+          <h5><%=book.author%></h5>
+          <p><%=book.synopsis%></p>
+        </div>
       </div>
-      <div class="about-book">
-        <h3><%=book.title%></h3>
-        <h5><%=book.author%></h5>
-        <p><%=book.synopsis%></p>
-      </div>
-    </section>
 
-  <!--buttons-->
-  <section class="actions">
-    <button class="btn"><a href="/books/<%= book._id %>/edit">Edit</a></button>
-    <form method="POST" action="/books/<%= book._id %>?_method=DELETE">
-        <input class="btn" type="submit" value="Delete" />
-    </form>
-</section>
-
-
-    <Section class="reviews-section">
-      <div class="review-heading">
-        <h4>Reviews</h4>
-        <button class="btn review-btn">
-          <a href="/reviews/new/<%= book._id %>">Write A Review</a>
+      <div class="book-actions">
+        <button class="btn">
+          <a href="/books/<%= book._id %>/edit">Edit</a>
         </button>
+        <form method="POST" action="/books/<%= book._id %>?_method=DELETE">
+          <input class="btn" type="submit" value="Delete" />
+        </form>
       </div>
-      <div class="book-review">
-        <% if (book.reviews && book.reviews.length > 0) { %> <% for (let review
-        of book.reviews) { %>
-        <h6><%= review.reviewTitle %> <%= review.rating %>/10</h6>
-        <p><%= review.reviewerName %></p>
-        <p><%= review.content %></p>
-        <% } %> <% } else { %>
-        <p>Write the first review!</p>
-        <% } %>
+
+      <div class="reviews-section">
+        <div class="review-heading">
+          <h4>Reviews</h4>
+          <button class="btn review-btn">
+            <a href="/reviews/new/<%= book._id %>">Write A Review</a>
+          </button>
+        </div>
+        <div class="book-review">
+          <% if (book.reviews && book.reviews.length > 0) { %> <% for (let
+          review of book.reviews) { %>
+          <h6><%= review.reviewTitle %> <%= review.rating %>/10</h6>
+          <p><%= review.reviewerName %></p>
+          <p><%= review.content %></p>
+          <% } %> <% }
+           else { %>
+          <p>Write the first review!</p>
+          <% } %>
+        </div>
       </div>
-    </Section>
-    <footer><%- include('./partials/footer.ejs') %></footer>
+    </div>
+    <footer> <%- include('./partials/footer.ejs') %> </footer>
   </body>
 </html>

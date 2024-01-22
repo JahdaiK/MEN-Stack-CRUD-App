@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 5% 1fr 1fr 1fr 1fr;
+}
+
+nav {
+  background-color: lightcoral;
+}
+.book-details {
+  background-color: aqua;
+}
+
+
+.book-actions {
+  background-color: lightsteelblue;
+}
+
+.reviews-section {
+  background-color: lightgoldenrodyellow;
+}
+
+/* .reviews-heading {
+  background-color: lavender;
+}
+.book-review {
+    background-color: lavender;
+  } */
+
+footer {
+  background-color: cornflowerblue;
+}
