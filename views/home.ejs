@@ -1,20 +1,20 @@
 <!-- The landing page of the application, will display featured books. -->
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+      <%- include('./partials/head.ejs') %>
+      <title>BGR</title>
     <link rel="stylesheet" href="/styles/home.css" />
   </head>
   <body>
 
     <div class="container">
-   <%- include('./partials/nav.ejs') %>
+   <nav><%- include('./partials/nav.ejs') %></nav>
       <!-- book of month -->
       <div id="bookofmonth">
         <div id='bookcover' >
-          <img src="<%=bookOfMonth.photo%>"
-          />
+          <a href="/books/<%=bookOfMonth._id%>"
+            ><img src="<%=bookOfMonth.photo%>"
+          /></a>
         </div>
           
         <div id="info">
@@ -22,6 +22,7 @@
           <p><%=bookOfMonth.synopsis%></p>
         </div>
       </div>
+      
       <!-- featured books -->
       <div id="spotlight"> 
         <h3>Featured Books</h3>
@@ -46,7 +47,7 @@
        </ul>
 
       </div>
-      <footer>footer</footer>
+      <footer><%- include('./partials/footer.ejs') %></footer>
     </div>  
   </body>
 </html>

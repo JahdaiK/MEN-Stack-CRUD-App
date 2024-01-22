@@ -1,10 +1,8 @@
 <!-- The view for the show route. Will display all details for a specific book. -->
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/main.css">
+    <%- include('./partials/head.ejs') %>
+    <title><%=book.title%></title>
     <link rel="stylesheet" href="/styles/book-details.css" />
   </head>
   <body>
@@ -22,7 +20,7 @@
       </div>
 
       <div class="book-actions">
-        <button class="edit-btn">
+        <button class="edit-btn btn">
           <a href="/books/<%= book._id %>/edit">Edit</a>
         </button>
         <form method="POST" action="/books/<%= book._id %>?_method=DELETE">

@@ -1,14 +1,14 @@
 <!-- The view for the index route. Will display ALL BOOKS -->
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <%- include('./partials/head.ejs') %>
+    <title>All Books</title>
+    <link rel="stylesheet" href="/styles/book-index.css">
   </head>
   <body>
     <nav><%- include('./partials/nav.ejs') %></nav>
     <div class="hero">
-      <p>Here's What We've Read So Far...</p>
+      <h2>Here's What We've Read So Far...</h2>
     </div>
 
     <div class="library">
@@ -19,8 +19,8 @@
             <a href="/books/<%=book._id%>"> <img src="<%=book.photo%>" /></a>
 
             <figcaption>
-              <p>
-                <span><%=book.title%></span> <%=book.bomMonth%>
+              <h4><%=book.title%></h4>
+              <p><%=book.bomMonth%>
                 <%=book.bomYear%>
               </p>
 
@@ -31,11 +31,6 @@
         <%}%>
       </ul>
     </div>
-    <!-- Nav Bar -->
-    <!--Heres What we Read So far -->
-    <!--Gallery of book covers, month and date. clicking on cover brings to details page-->
-
-    <!--Edit, delete button-->
     <footer><%- include('./partials/footer.ejs') %></footer>
   </body>
 </html>

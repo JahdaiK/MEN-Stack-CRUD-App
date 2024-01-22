@@ -1,0 +1,33 @@
+ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 0px;
+}
+li{
+  display: inline-block;
+}
+  
+  .content {
+    width: 100%;
+    height: auto;
+   }
+  
+  figure {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+  }
+  
+  figcaption {
+    margin-top: 10px;
+  }
+  
