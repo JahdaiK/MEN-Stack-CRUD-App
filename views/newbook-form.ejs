@@ -3,13 +3,15 @@
     <head>
       <%- include('./partials/head.ejs') %>
       <title>New Book</title>
+      <link rel="stylesheet" href="/styles/forms.css">
     </head>
   </head>
   <body>
+    <div class="container">
     <nav><%- include('./partials/nav.ejs') %></nav>
     
 
-    <section>
+    <section class="form">
       <form method="POST" action="/books">
         
         <div class="input-box">
@@ -83,5 +85,6 @@
      
     </section>
     <footer><%- include('./partials/footer.ejs') %></footer>
+  </div>
   </body>
 </html>

@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+  }
+.container{
+    height: 100vh;
+display: grid;
+grid-template-rows: 5% 1fr 5%;
+}
+.form{
+margin: 1%;
+}
+/* nav{
+
+}
+footer{
+
+} */

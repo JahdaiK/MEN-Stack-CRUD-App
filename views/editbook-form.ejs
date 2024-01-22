@@ -2,10 +2,12 @@
   <head>
     <%- include('./partials/head.ejs') %>
     <title>Edit Book</title>
+    <link rel="stylesheet" href="/styles/forms.css">
   </head>
   <body>
+    <div class="container">
     <nav><%- include('./partials/nav.ejs') %></nav>
-    <section>
+    <section class="form">
       <form method="POST" action="/books/<%=book._id%>?_method=PUT">
         <div class="input-box">
           <label for="title">Title:</label>
@@ -125,5 +127,6 @@
       </form>
     </section>
     <footer><%- include('./partials/footer.ejs') %></footer>
+  </div>
   </body>
 </html>

@@ -5,9 +5,11 @@
 nav {
     margin-bottom: 3px;
     background-color: rgb(209, 173, 242);
+    text-align: right;
   }
   footer{
     background-color: rgb(209, 173, 242);
+    text-align: center;
   }
 
 .btn{
@@ -20,4 +22,5 @@ nav {
 
 a{
     text-decoration: none;
+    color: white;
 }
