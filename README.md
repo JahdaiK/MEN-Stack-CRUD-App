@@ -1,6 +1,6 @@
 # BGR MEN STACK!
 [BGR Site](https://bgr-e4f832504566.herokuapp.com/)
-<!-- ![BGR Logo](https://github.com/JahdaiK/portfolio/blob/main/portfolio%20images/JahMoriahLogo.png) -->
+![BGR Logo](./public/assets/BGR-logos.jpeg)
 
 ## TechYeslogy Used:
 - HTML
