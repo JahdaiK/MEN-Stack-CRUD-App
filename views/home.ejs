@@ -13,19 +13,37 @@
       <nav>navbar</nav>
       <!-- book of month -->
       <div id="bookofmonth">
-        <div id="bookcover">bookcover</div>
+        <div id='bookcover' >
+          <img src="<%=bookOfMonth.photo%>"
+          />
+        </div>
+          
         <div id="info">
-          <h3>date</h3>
-          <p>synopsis</p>
+          <h3><%=bookOfMonth.bomMonth%> <%=bookOfMonth.bomYear%></h3>
+          <p><%=bookOfMonth.synopsis%></p>
         </div>
       </div>
       <!-- featured books -->
       <div id="spotlight"> 
         <h3>Featured Books</h3>
-       <ul>
-        <li>book1</li>
-        <li>book2</li>
-        <li>book3</li>
+       <ul class='featured-books'>
+        <% for(let featuredBook of featuredBooks){%>
+          <li class="featured-book">
+            <figure>
+              <a href="/books/<%=featuredBook._id%>"
+                ><img class="featurecover" src="<%=featuredBook.photo%>"
+              /></a>
+            </figure>
+            <figcaption>
+            
+                <h3><%=featuredBook.title%></h3>
+                <h4>
+                  <%=featuredBook.bomMonth%> <%=featuredBook.bomYear%>
+                </h4>
+          
+            </figcaption>
+          </li>
+          <% } %>
        </ul>
 
       </div>

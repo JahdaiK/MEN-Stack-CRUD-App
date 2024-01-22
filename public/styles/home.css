@@ -1,51 +1,82 @@
-body{
+body {
   margin: 0;
 }
-.container{
+
+
+.container {
   display: grid;
   height: 100vh;
-  grid-template-rows: .20fr 50% .75fr .10fr;
+  grid-template-rows: 
+  5%
+  55% 
+  1fr 
+5%;
   row-gap: .3rem;
-  
 }
 
-nav{
+nav {
   background-color: lightcoral;
 }
+img{
+  height: 300px;
+  width: auto;
+}
 
-#bookofmonth{
+#bookofmonth {
   background-color: lightgreen;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'bookcover info'
- 
+  grid-template-areas: "bookcover info";
 }
-#bookcover{
+#bookcover {
   grid-area: bookcover;
+  justify-self: center;
 }
-#info{
+#bookcover > img {
+  height: 425px;
+  margin-top: .5rem;
+width: auto;
+  object-fit: contain;
+  display: block;
+
+}
+
+#info {
   grid-area: info;
 }
-#spotlight{
+
+#spotlight {
   background-color: lightskyblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#spotlight > h3{
-  text-align: center;
+#spotlight >h3 {
+ text-align: center;
 }
-ul{
+
+
+
+#featurecover{
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+ul {
   list-style: none;
 }
-li{
-display: inline-block;
+li {
+  display: inline-block;
 }
 
-footer{
-    background-color: lightslategray;
+figcaption{
+  text-align: center;
 }
 
-
-
-
-
-  
+footer {
+  background-color: lightslategray;
+}
