@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/book-details.css" />
   </head>
   <body>
     <div class="container">
-    <nav><%- include('./partials/nav.ejs') %></nav>
+      <nav><%- include('./partials/nav.ejs') %></nav>
       <div class="book-details">
         <div class="image-wrapper">
-        <img src="<%=book.photo%>" />
-      </div>
+          <img src="<%=book.photo%>" />
+        </div>
         <div class="about-book">
           <h3><%=book.title%></h3>
           <h5><%=book.author%></h5>
@@ -21,15 +22,37 @@
       </div>
 
       <div class="book-actions">
-     
+        <button class="edit-btn">
+          <a href="/books/<%= book._id %>/edit">Edit</a>
+        </button>
+        <form method="POST" action="/books/<%= book._id %>?_method=DELETE">
+          <input class="btn delete-btn" type="submit" value="Delete" />
+        </form>
       </div>
 
       <div class="reviews-section">
-        
-       
+        <div class="review-heading">
+          <h3>Reviews</h3>
+          <button class="btn review-btn">
+            <a href="/reviews/new/<%= book._id %>">Write A Review</a>
+          </button>
+         
+        </div>
+ <br>
+
+        <div class="book-review">
+          <% if (book.reviews && book.reviews.length > 0) { %> <% for (let
+          review of book.reviews) { %>
+            <div class="review">
+          <h4><%= review.reviewTitle %> <%= review.rating %>/10</h4>
+          <p><%= review.reviewerName %></p>
+          <p><%= review.content %></p></div>
+          <% } %> <% } else { %>
+          <p>Write the first review!</p>
+          <% } %>
+        </div>
       </div>
-      <footer> <%- include('./partials/footer.ejs') %> </footer>
+      <footer><%- include('./partials/footer.ejs') %></footer>
     </div>
-    
   </body>
 </html>

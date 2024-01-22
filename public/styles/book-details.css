@@ -5,8 +5,8 @@ body {
 .container {
   display: grid;
   height: 100vh;
-  grid-template-rows: 5% 55% 5% 1fr 5%;
-  /* row-gap: .3rem; */
+  grid-template-rows: 5% 70% 5% auto 5%;
+  row-gap: .3rem;
 }
 
 nav {
@@ -19,41 +19,44 @@ nav {
 }
 
 .image-wrapper{
-    height: 100%;
+    height: 545px;
     justify-self: center;
 }
 
 .image-wrapper img {
     object-fit: cover;
-    height: 65%;
+    height: 100%;
     width: auto;
    }
    .about-book{
     width: 50%;
    }
-/* .book-details > img{
-/* height: 300px;
-width: auto;
-object-fit: contain;
-height: 70%;
-width: auto; */
-
 
 
 .book-actions {
   background-color: lightsteelblue;
+  display: flex;
+  justify-content:flex-end;
+}
+
+.btn{
+margin: 5px;
 }
 
 .reviews-section {
-  background-color: lightgoldenrodyellow;
+  background-color: orange;
 }
 
-/* .reviews-heading {
-  background-color: lavender;
+.review-heading {
+  /* background-color: lavender; */
+  display: flex;
+  border-bottom: 1px green solid;
 }
-.book-review {
-    background-color: lavender;
-  } */
+
+
+.review{
+  border: 1px red solid;
+}
 
 footer {
   background-color: cornflowerblue;

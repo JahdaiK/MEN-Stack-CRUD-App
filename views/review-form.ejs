@@ -8,7 +8,7 @@
     <nav><%- include('./partials/nav.ejs') %></nav>
 
     <section>
-      <form method="POST" action="/reviews/create/<%book._id%>">
+      <form method="POST" action="/reviews/create/<%= book._id %>">
         <div class="input-box">
           <label for="reviewTitle">Title:</label>
           <input
