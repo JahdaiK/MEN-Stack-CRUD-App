@@ -2,42 +2,72 @@ body {
   margin: 0;
 }
 
-@media screen and (max-width: 600px) {
-  .container {
-     grid-template-rows: 
-     10%
-     60% 
-     30% 
-     10%;
+ @media only screen  and (max-width: 768px){
+  .container{
+    height: 100vh;
+    width: 100vw;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 
+    5vh
+    2fr
+   1fr
+   5vh;
+    grid-template-areas: 
+    'nav',
+    'bom',
+    'spotlight',
+    'footer';
   }
+nav{
+  grid-area: 'nav';
  
-  #bookofmonth {
-     grid-template-columns: 1fr;
-  }
- 
-  #bookcover {
-     width: 100%;
-  }
- 
-  #info {
-     width: 100%;
-  }
- 
-  li {
-     display: block;
-     width: 100%;
-  }
+}
+#bookofmonth{
+  grid-area: 'bom';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+#info{
+text-align: center;
+}
+#spotlight{
+  grid-area: 'spotlight';
+ text-align: center;
+}
+.featured-books{
+padding: 0;
+}
+
+footer{
+  grid-area: 'footer';
+}
+img{
+  height: 60vh;
+}
+ul {
+  list-style: none;
+}
+
+figcaption{
+  text-align: center;
  }
  
-.container {
+ }
+
+/* ------------------------------------- */
+ @media only screen  and (min-width: 769px){
+ .container {
   display: grid;
   height: 100vh;
+  width: 100vw;
   grid-template-rows: 
-  5%
-  55% 
-  1fr 
-5%;
-  row-gap: .3rem;
+    8vh
+    2fr
+   1fr
+   8vh;
 }
 
 nav {
@@ -66,14 +96,13 @@ img{
 width: auto;
  object-fit: contain;
 
-
-}
+} 
 
 #info {
   grid-area: info;
   text-wrap: wrap;
-  width: 50%;
-  /* align-self:center; */
+  width: 50%; 
+  align-self:center; 
 }
 
 #spotlight {
@@ -106,8 +135,4 @@ li {
 
 figcaption{
   text-align: center;
-}
-
-
-
-
+} }

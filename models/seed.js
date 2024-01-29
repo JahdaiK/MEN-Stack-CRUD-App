@@ -63,7 +63,7 @@ const books = [
     author: "Jessamine Chen",
     genre: "Science Fiction",
     photo: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1639314979i/57846320.jpg",
-    synopsis: "tbd6",
+    synopsis: "In The School for Good Mothers, Frida is the mother of a 1-year-old daughter, Harriet, for whom she shares joint custody with her ex-husband. On a particularly overwhelming day, Frida leaves Harriet alone for a few hours. To Frida's horror, she's soon been reported for neglect and an investigation into her capacity as a mother begins. Soon, Frida is thrust into an intrusive, dystopian program to assess her mothering abilities, and her custody over her child hangs in the balance.",
     isBookOfMonth: false,
     isFeatured: false,
     bomMonth: "August",
